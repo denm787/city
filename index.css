@@ -1,0 +1,47 @@
+.container {
+   text-align: center;
+    background-color: #649698;
+    margin: auto;
+    width: 30%;
+    height: auto;
+    border: 3px solid green;
+    padding: 10px;
+    border-radius: 300px;
+}
+body {
+    background-image: url(city.jpeg);
+   
+}
+button{
+    cursor: pointer;
+    background-color: #4CAF50; /* Green */
+    border: none ;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 100px;
+}
+#cityName {
+    
+    margin: 10px 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #d44a22;
+    background-color: #C0EFF1;
+    font-size:x-large
+}
+::placeholder {
+    color: #af8c4c;
+}
+h1 {
+    color: #d44a22;
+}
+h3 {
+    color: #5C5607;
+}

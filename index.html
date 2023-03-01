@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Discover Your City</h1>
+        <input type="text" id="cityName" placeholder="choose your city">
+        <h3 id="city"></h3>
+        <button onclick="Showcity()">Show</button>
+    </div>
+    <script>
+        const citys = document.getElementById('city')
+        const input = document.getElementById('cityName')
+        function Showcity(){
+            const name = input.value;
+            fetch(`https://api.api-ninjas.com/v1/city?name=${name}`,{
+                method: 'GET',
+                headers: { 
+                    'X-Api-Key': 'HxctiSn3lzO3WoUMuHKRKETL8dHnmwUpMsN4YVN9'
+                },
+            }).then(async(data)=>{
+                const result = await data.json();
+                let html = '';
+                html = `${html}<p>name: ${result[0].name} </p><p>latitude: ${result[0].latitude}</p>
+                <p>longitude: ${result[0].longitude} </p><p>country: ${result[0].country}</p><p>population: ${result[0].population}</p>
+                <p>is_capital?: ${result[0].is_capital}</p>`;
+                citys.innerHTML = html;
+                input.value = ''
+            })
+        }
+    </script>
+</body>
+</html>
